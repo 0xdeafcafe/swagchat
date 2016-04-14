@@ -8,27 +8,25 @@ async function index(req, res) {
 		headers: req.headers,
 		body: req.method === 'GET' ? void 0 : req.body,
 		resolveWithFullResponse: true,
-		gzip: true,
+		encoding: null,
 		
-		proxy: 'http://127.0.0.1:8888',
-		rejectUnauthorized: false
+		// proxy: 'http://127.0.0.1:8888',
+		// rejectUnauthorized: false
 	};
+	// delete host header as this breaks certificate stuff
 	delete requestOptions.headers.host;
 
 	let response = void 0;
 	try {
 		response = await request(requestOptions);
+		
+		// remove transfer-encoding header, as we doesn't support this
 		delete response.headers['transfer-encoding'];
-		delete response.headers['content-encoding'];
-		await fs.writeFile('C:\\img.jpg', new Buffer(response.body, 'binary'));
-		await fs.writeFile('C:\\data.file', JSON.stringify(response));
-		// console.log('xxx');
-		// console.log(typeof(response.body));
-		// console.log(response.body);
 
+		// send that data yo
 		res.set(response.headers);
 		res.status(response.statusCode.toString());
-		res.send(new Buffer(response.body, 'binary'));
+		res.send(response.body);
 	}
 	catch (ex) {
 		console.log(ex);
