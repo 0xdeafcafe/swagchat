@@ -3,11 +3,13 @@
 console.log(__dirname);
 
 import App from '../src';
-import HaloApi from '../lib/halo-api';
+import DataContext from '../lib/data-context';
+import Random from 'random-js';
 
 const subscriptionKey = process.env.HALO_API_SUBSCRIPTION_KEY;
 
-App.set('halo-api', new HaloApi(subscriptionKey));
+App.set('data-context', new DataContext('localhost', 'access', 'kdSVyuCEgNdYf6gufDAbXYR3', 'swagchat'));
+App.set('random', new Random(Random.engines.mt19937().seedWithArray([0x12345678, 0x90abcdef])));
 
 const port = process.env.PORT || 3000;
 App.listen(port, () => console.log(`listening on port ${port}`));
