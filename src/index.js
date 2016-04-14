@@ -3,8 +3,8 @@
 import express from 'express';
 import * as middleware from './middleware';
 import * as Wildcard from './handlers/wildcard';
-import PreResponse from './routers/pre-response';
-import PostResponse from './routers/post-response';
+import PreSnapchat from './routers/pre-snapchat';
+import PostSnapchat from './routers/post-snapchat';
 
 const app = express();
 export default app;
@@ -13,9 +13,9 @@ app.set('etag', false);
 app.use(middleware.bodyRaw);
 
 // run proxy middleware
-app.use(PreResponse);
+app.use(PreSnapchat);
 app.use(Wildcard.index);
-app.use(PostResponse);
+app.use(PostSnapchat);
 app.use(function(req, res) {
 	res.status(req.scResult.statusCode.toString());
 	res.set(req.scResult.headers);
