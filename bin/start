@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+console.log(__dirname);
+
+import App from '../src';
+import HaloApi from '../lib/halo-api';
+
+const subscriptionKey = process.env.HALO_API_SUBSCRIPTION_KEY;
+
+App.set('halo-api', new HaloApi(subscriptionKey));
+
+const port = process.env.PORT || 3000;
+App.listen(port, () => console.log(`listening on port ${port}`));
