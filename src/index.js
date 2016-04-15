@@ -2,7 +2,7 @@
 
 import express from 'express';
 import * as middleware from './middleware';
-import * as Wildcard from './handlers/wildcard';
+import SnapchatProxy from './handlers/snapchat-proxy';
 import PreSnapchat from './routers/pre-snapchat';
 import PostSnapchat from './routers/post-snapchat';
 
@@ -14,7 +14,7 @@ app.use(middleware.bodyRaw);
 
 // run proxy middleware
 app.use(PreSnapchat);
-app.use(Wildcard.index);
+app.use(SnapchatProxy);
 app.use(PostSnapchat);
 app.use(function(req, res) {
 	res.status(req.scResult.statusCode.toString());
