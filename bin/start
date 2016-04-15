@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-console.log(__dirname);
-
 import App from '../src';
 import DataContext from '../lib/data-context';
 import Random from 'random-js';
