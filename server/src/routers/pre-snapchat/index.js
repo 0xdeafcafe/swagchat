@@ -1,6 +1,7 @@
 import Router from 'express-promise-router';
-import zlib from 'zlib';
-import fs from 'fs';
+import SpoofDescriptions from './handlers/spoof-descriptions';
 
 const router = Router();
 export default router;
+
+router.get('/shared/description', SpoofDescriptions);
