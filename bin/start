@@ -2,10 +2,8 @@
 
 import App from '../src';
 import DataContext from '../lib/data-context';
-import Random from 'random-js';
 
 App.set('data-context', new DataContext('localhost', 'access', 'kdSVyuCEgNdYf6gufDAbXYR3', 'swagchat'));
-App.set('random', new Random(Random.engines.mt19937().seedWithArray([0x12345678, 0x90abcdef])));
 
 const port = process.env.PORT || 3000;
 App.listen(port, () => console.log(`listening on port ${port}`));
