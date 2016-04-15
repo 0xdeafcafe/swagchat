@@ -1,0 +1,9 @@
+Package: com.0xdeafcafe.swagchat
+Name: SwagChat
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Alex Forbes-Reed
+Author: Alex Forbes-Reed
+Section: Tweaks

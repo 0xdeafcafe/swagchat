@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.0xdeafcafe.swagchatsettings</string>
+			<key>key</key>
+			<string>enableTweak</string>
+			<key>label</key>
+			<string>Enable SwagChat</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>URL of custom snapchat server</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<string></string>
+			<key>defaults</key>
+			<string>com.0xdeafcafe.swagchatsettings</string>
+			<key>isURL</key>
+			<true />
+			<key>key</key>
+			<string>customServerUrl</string>
+			<key>placeholder</key>
+			<string>https://my-app.herokuapp.com</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>SwagChat Settings</string>
+</dict>
+</plist>
