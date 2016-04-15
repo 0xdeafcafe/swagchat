@@ -12,7 +12,7 @@ Third-party snapchat middleware server
 ``` bash
 > git clone git@github.com:0xdeafcafe/swagchat.git
 > cd swagchat/iphone-tweak
-> make do # follow instructions - and enter
+> make do # follow instructions - and enter root account password - after installation go to settings and toggle it on a set the custom server url
 > cd ../server
 > npm i
 > npm run start # todo, setting up mysql server creds, and database schema
