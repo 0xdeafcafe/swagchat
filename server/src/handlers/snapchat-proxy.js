@@ -11,7 +11,7 @@ export default async function index(req, res, next) {
 		headers: req.headers,
 		body: req.method === 'GET' ? void 0 : req.body,
 		resolveWithFullResponse: true,
-		encoding: null
+		encoding: null,
 		
 		// proxy: 'http://127.0.0.1:8888',
 		// rejectUnauthorized: false
